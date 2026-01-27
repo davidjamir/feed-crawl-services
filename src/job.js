@@ -8,7 +8,7 @@ const {
 const { saveBatch } = require("./publish");
 
 const parser = new Parser({
-    timeout: 15000,
+    timeout: 30000,
     customFields: {
         item: [["content:encoded", "contentEncoded"]],
     },
