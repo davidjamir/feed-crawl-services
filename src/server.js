@@ -19,7 +19,7 @@ function cleanSummary(summary = "") {
 
 function smartCutTitle(
   text,
-  { minLength = 30, maxLength = 100, ellipsis = true } = {},
+  { minLength = 30, maxLength = 250, ellipsis = true } = {},
 ) {
   console.log("SMART CUT INPUT:", text.length);
   if (!text) return "";
