@@ -10,7 +10,6 @@ const parser = new Parser({
   },
 });
 
-const MAX_RETRY = 5;
 const RSS2JSON_1 = "https://api.rss2json.com/v1/api.json?rss_url=";
 const RSS2JSON_2 = "https://www.toptal.com/developers/feed2json/convert?url=";
 
