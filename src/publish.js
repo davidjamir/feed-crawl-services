@@ -11,6 +11,7 @@ async function saveBatch(payload, mode) {
     telegram: {
       sent: false,
       failCount: 0,
+      sentLinks: [],
       lastError: null,
       sentAt: null,
     },
