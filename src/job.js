@@ -205,6 +205,7 @@ async function collectBatchJob(jobKey = "") {
   const api = cfg.api || {};
   const topics = cfg.topics || [];
   const flags = cfg.flags || [];
+  const tags = cfg.tags || [];
   const targets = cfg.targets || [];
 
   let feed;
@@ -219,7 +220,6 @@ async function collectBatchJob(jobKey = "") {
   }
 
   const items = feed.items || [];
-
   const lastLink = last[feedUrl] || "";
   const newItems = getNewItems(items, lastLink, 1);
   if (!newItems.length)
@@ -245,6 +245,7 @@ async function collectBatchJob(jobKey = "") {
     },
     topics,
     flags,
+    tags,
     targets,
     source: {
       feedUrl,
