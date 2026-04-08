@@ -9,7 +9,7 @@ async function popJobs(shardId, count = 1) {
   const n = Math.max(1, Number(count) || 1);
   const out = [];
 
-  const LOCK_MS = 3 * 60 * 1000;
+  const LOCK_MS = 8 * 60 * 1000;
   const now = new Date();
 
   while (out.length < n) {
