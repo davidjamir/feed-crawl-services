@@ -207,6 +207,8 @@ async function collectBatchJob(jobKey = "") {
   const flags = cfg.flags || [];
   const tags = cfg.tags || [];
   const targets = cfg.targets || [];
+  const chatName = cfg.chatNmae || "";
+  const chatType = cfg.chatType || "";
 
   let feed;
   try {
@@ -237,6 +239,8 @@ async function collectBatchJob(jobKey = "") {
 
   const payload = {
     chatId: String(chatId),
+    chatName: String(chatName),
+    chatType: String(chatType),
     api: {
       endpoint: api.endpoint,
       token: api.token,
