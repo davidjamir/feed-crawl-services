@@ -207,7 +207,7 @@ async function collectBatchJob(jobKey = "") {
   const flags = cfg.flags || [];
   const tags = cfg.tags || [];
   const targets = cfg.targets || [];
-  const chatName = cfg.chatNmae || "";
+  const chatName = cfg.chatName || "";
   const chatType = cfg.chatType || "";
 
   let feed;
