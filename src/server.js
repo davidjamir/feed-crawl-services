@@ -50,11 +50,14 @@ function smartCutTitle(
 }
 
 function buildPublishItem(item) {
+  const categories = (item.categories || []).filter(
+    (i) => i !== "Uncategorized",
+  );
   return {
     title: smartCutTitle(item.title || ""),
     link: item.link || "",
     guid: item.guid || item.id || item.link || "",
-    categories: item.categories || [],
+    categories,
     publishedAt: item.isoDate || item.pubDate || "",
     html: (item.contentEncoded || "").trim(), // full HTML
     snippet: (item.contentSnippet || cleanSummary(item.summary) || "").trim(),
