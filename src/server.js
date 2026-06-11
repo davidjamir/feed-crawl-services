@@ -17,6 +17,31 @@ function cleanSummary(summary = "") {
     .trim();
 }
 
+function removeTrailingAuthor(text, tailLength = 30) {
+  if (!text) return "";
+
+  const tail = text.slice(-tailLength);
+
+  const separators = [" - ", " _ ", " @ "];
+
+  let cutPos = -1;
+
+  for (const sep of separators) {
+    const idx = tail.lastIndexOf(sep);
+
+    if (idx !== -1) {
+      cutPos = text.length - tail.length + idx;
+      break;
+    }
+  }
+
+  if (cutPos !== -1) {
+    return text.slice(0, cutPos).trim();
+  }
+
+  return text;
+}
+
 function smartCutTitle(
   text,
   {
@@ -30,7 +55,7 @@ function smartCutTitle(
 
   const s = text.replace(/\s+/g, " ").trim();
   if (s.length <= triggerLength) {
-    return s;
+    return removeTrailingAuthor(s);
   }
 
   // 1️⃣ try sentence end within range
@@ -46,7 +71,7 @@ function smartCutTitle(
     cutAt = cutWindowMax;
   }
 
-  return s.slice(0, cutAt).trim() + (ellipsis ? "…" : "");
+  return removeTrailingAuthor(s.slice(0, cutAt).trim() + (ellipsis ? "…" : ""));
 }
 
 function buildPublishItem(item) {
