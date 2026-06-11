@@ -46,7 +46,7 @@ function smartCutTitle(
   text,
   {
     cutWindowMin = 40,
-    cutWindowMax = 250,
+    cutWindowMax = 300,
     triggerLength = 90,
     ellipsis = true,
   } = {},
