@@ -35,8 +35,7 @@ async function parseFeed(url) {
       url,
       {
         headers: {
-          "User-Agent":
-            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120",
+          "User-Agent": "RSS-Bot-Feed/2.0",
           Accept: "application/rss+xml, application/xml, text/xml, */*",
         },
         redirect: "follow",
